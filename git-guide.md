@@ -45,7 +45,7 @@ J+M+J
 - checkout
   - Switches to specified branch.
   - Combined with '-b' flag, will create new branch of specified name and swithc to it.
-  - `git checkout exampleBranch` or `git checkout -b "exampleBranch"
+  - `git checkout exampleBranch` or `git checkout -b "exampleBranch"`
 - ~~init~~
 - ~~remote~~
 
