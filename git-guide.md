@@ -9,8 +9,10 @@ J+M+J
   - `git status`
 - clone
   - Makes a clone of specified remote repository onto local device.
+  - `git clone git@github.com:WSU-kduncan/ceg3120-Etten32.git`
 - add
   - Adds a specified file or folder to be tracked by git.
+  - `git add caloy.txt`
 - rm
   - Removes file from stage.
     - must be staged and committed
@@ -18,23 +20,32 @@ J+M+J
   - Combined with '--cahced' flag, will remove it from stage but not from local.
     - must be staged but does not need to be committed
     - does not delete the local file
+  - `git rm --cahce caloy.txt`
 - commit
-  - Prepares all changed branches and added files to be pushed to remote. Appends specified message to be pushed as well.
-  - Combined with 'a' flag it auto-adds previously tracked files to commit.  
+  - Prepares all changed branches and added files to be pushed to remote. Appends specified message (typed in editor) to be pushed as well.
+  - Combined with 'a' flag it auto-adds previously tracked files to commit.
+  - Combined with 'm' flag a message may be appended right in the console.
+  - `git commit -am "Commit example"`  
 - push
   - Pushes committed files from a the local to the remote.
+  - `git push`
 - fetch
   - Downloads and stashes changes from the remote to be applied later to the local.
+  - `git fetch`
 - merge
   - In relation different branches, takes in all files from a specified branch and merges them into the current branch.
   - In relation to current branch, take changes from 'fetch' and applies them to the current branch.
+  - `git merge exampleBranch` or `git merge`
 - pull
-  - Checks the remote and pulls down any changes that the local does not have. A conbination of 'fetch' and 'merge'. 
+  - Checks the remote and pulls down any changes that the local does not have. A conbination of 'fetch' and 'merge'.
+  - `git pull` 
 - branch
   - Copies the current branch to a new branch with specified name.
+  - `git branch exampleBranch`
 - checkout
   - Switches to specified branch.
   - Combined with '-b' flag, will create new branch of specified name and swithc to it.
+  - `git checkout exampleBranch` or `git checkout -b "exampleBranch"
 - ~~init~~
 - ~~remote~~
 
