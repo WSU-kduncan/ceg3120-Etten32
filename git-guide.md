@@ -10,11 +10,17 @@ J+M+J
 - clone
   - Makes a clone of specified remote repository onto local device.
 - add
-  - Adds a specified file or folder to be tracked by git
+  - Adds a specified file or folder to be tracked by git.
 - rm
-  - 
+  - Removes file from stage.
+    - must be staged and committed
+    - deletes local file as well
+  - Combined with '--cahced' flag, will remove it from stage but not from local.
+    - must be staged but does not need to be committed
+    - does not delete the local file
 - commit
-  - Prepares all changed branches and added files to be pushed to remote. Appends specified message to be pushed as well.  
+  - Prepares all changed branches and added files to be pushed to remote. Appends specified message to be pushed as well.
+  - Combined with 'a' flag it auto-adds previously tracked files to commit.  
 - push
   - Pushes committed files from a the local to the remote.
 - fetch
@@ -28,18 +34,27 @@ J+M+J
   - Copies the current branch to a new branch with specified name.
 - checkout
   - Switches to specified branch.
+  - Combined with '-b' flag, will create new branch of specified name and swithc to it.
 - ~~init~~
 - ~~remote~~
 
 ## git files & folders
 
 - .git folder
+  - Contains information retaining to git such as commit messages, logs, and the git config file. 
 - .gitignore file
+    - File that holds list of files for git to ignore.
+    - files should use relative paths
+    - prevents file from being added unless forced
 - ~~.git/hooks~~
 
 ## GitHub
 
 - Pull requests
+  - Form to request a branch merge wich can be checked over and commented, and either merged or rejected by repository authorities.
 - SSH authentication to repositories
+  - A key system between local and remote that gives authority for the local to securely connect and deal with GitHub repositories.
+    - requires a private key on the machine
+    - requires a public key on GitHub that corresponds to a copy on the local 
 - ~~Actions~~
 
