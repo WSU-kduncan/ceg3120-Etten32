@@ -39,7 +39,7 @@ async def on_message(message):
     ]
 
     mmm_quotes = [
-        'Yes, here’s the Tabbywyrm. Like I said, I’m not sure whether Poppy ate something, or something ate Poppy, but there’s a good deal of Poppy in this creature regardless. ',
+        'I’m not sure whether Poppy ate something, or something ate Poppy, but there’s a good deal of Poppy in this creature regardless. ',
         'Leave now, before it\'s too late...',
         'What a shame, they are so very useful. Why, did you know that if a beaver two feet long with a tail a foot and a half long can build a dam twelve feet high and six feet wide in two days, all you would need to build Boulder Dam is a beaver sixty-eight feet long with a fifty-one-foot tail?',
         'Seventeen!',
