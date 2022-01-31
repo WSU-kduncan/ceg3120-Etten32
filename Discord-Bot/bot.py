@@ -38,16 +38,18 @@ async def on_message(message):
         ),
     ]
 
-    hitchhiker_quotes = [
-        'There is an art, it says, or rather, a knack to flying. The knack lies in learning how to throw yourself at the ground and miss.',
-        'It is a mistake to think you can solve any major problems just with potatoes.',
-        'In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.',
-        'A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.',
+    mmm_quotes = [
+        'Yes, here’s the Tabbywyrm. Like I said, I’m not sure whether Poppy ate something, or something ate Poppy, but there’s a good deal of Poppy in this creature regardless. ',
+        'Leave now, before it\'s too late...',
+        'What a shame, they are so very useful. Why, did you know that if a beaver two feet long with a tail a foot and a half long can build a dam twelve feet high and six feet wide in two days, all you would need to build Boulder Dam is a beaver sixty-eight feet long with a fifty-one-foot tail?',
+        'Seventeen!',
+        'For his lady fair, Lancelot was able to endure whips, cuts, bruises, and all manner of incredible tortures and humiliations; but peanut butter and jelly, he could not have done.',
+        'I’ve never driven one o’ these newfangled fescraft before, hee-hee. Back in my day they all had stick shifts.',
     ]
 
-    if message.content == 'towel!':
+    if message.content == 'mmm':
         #response = random.choice(brooklyn_99_quotes)
-        response = random.choice(hitchhiker_quotes)
+        response = random.choice(mmm_quotes)
         await message.channel.send(response)
 
 client.run(TOKEN)
