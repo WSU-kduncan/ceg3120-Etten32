@@ -12,6 +12,5 @@
     - In order to use the bot once it has been activated on a server, type the command "mmm" in a message.
     - Upon the command "mmm", the bot will randomly select and post one from six qoutes taken from three stories relating to the names: Molly, Megan, and Milo.
   - Research
-    - you may have realized that it is lame that it only runs when you run the program.
-    In the real world, things are "always on", not waiting for Bob to turn his PC on and make sure the program is running.
-    Research some possible solutions that would solve this, and discuss why you think it would work. !!!!!
+    - One method of prividing continual bot action to a server would be to host it from a rented virtual server. (Such as can be bought from the following website: https://www.ionos.com/servers/rent-a-server) This would provide a relatively non-expensive way to keep the bot going regardless of local machines' powered-up state, as services such as these are generally dedicated to running continually and disconnected to any local status.
+    - A second, more company tailored, approach to solving this problem would be to buy or reserve a few servers to host the bot locally, and on ones own resources. This would be more expensive however, it would boast relitively greater security and privicey, as the bot would not be exposed to a third party. 
