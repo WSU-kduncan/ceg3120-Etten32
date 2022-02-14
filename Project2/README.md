@@ -32,6 +32,7 @@
 
 ### 1. 
 Selected: Amazon Linux 2 AMI (HVM) - Kernel 5.10
+
 Default Username: ec2-user
 
 ### 2. 
