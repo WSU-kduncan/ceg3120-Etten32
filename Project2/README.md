@@ -32,7 +32,7 @@
 
 ### 1. 
 Selected: Amazon Linux 2 AMI (HVM) - Kernel 5.10
-	Default Username: root
+Default Username: ec2-user
 
 ### 2. 
 I selected the vpc in the 'Network' choice, which automatically filled in the other needed blanks (such as Subnet).
