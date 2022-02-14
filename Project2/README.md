@@ -5,23 +5,23 @@
 ## Part 1:
 
 ### 1.
-
+This is the kind of container in which all instances and networks are housed inside of.
 ![VPC pic](./pictures/vpc-screenshot.PNG)
 
 ### 2.
-
+This is the network in which my VPC will operate.
 ![subnet pic](./pictures/subnet-screenshot.PNG))
 
 ### 3.
-
+This is the virtual device that acts as a router and is the doorway from the public network to the private and vise-versa.
 ![gateway pic](./pictures/gw-screenshot.PNG)
 
 ### 4.
-
+This is a table that shows what packets should be routed where within the network.
 ![route table pic](./pictures/routetable-screenshot.PNG)
 
 ### 5.
-
+This is a rule set that specifies what other machines are allowed to talk to this network.
 ![security group pic](./pictures/securityGroup-screenshot.PNG))
 
 ### 6. 
