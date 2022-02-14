@@ -1,6 +1,6 @@
 ## J+M+J
 
-#Project 2 - Robert Green
+# Project 2 - Robert Green
 
 ## Part 1:
 
