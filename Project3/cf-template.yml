@@ -3,7 +3,7 @@ Description: >-
   Testing area for AWS: This template builds a linux VM for CEG 2350 @ WSU.
 Parameters:
   KeyName:
-    Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
+    Description: Robert Green's template to create VPC, allow SSH access, and create a single instance with Elastic IP.
     Type: 'AWS::EC2::KeyPair::KeyName'
     ConstraintDescription: must be the name of an existing EC2 KeyPair.
   SSHLocation:
@@ -21,32 +21,36 @@ Mappings:
   AWSRegionUbuntu: # AMI for Ubuntu server in each supported region 
     us-east-1:   # N. Virginia
       PV64: NOT_SUPPORTED
-      HVM64: ami-07d0cf3af28718ef8
+      HVM64: ami-033b95fb8079dc481
       HVMG2: NOT_SUPPORTED
 Resources:
   VPC:
     Type: 'AWS::EC2::VPC'
     Properties:
-      CidrBlock: 10.0.0.0/16
-      Tags:
-        - Key: Application
-          Value: !Ref 'AWS::StackId'
-        - Key: Name
-          Value: CEG2350 VPC
-  Subnet:
-    Type: 'AWS::EC2::Subnet'
-    Properties:
-      VpcId: !Ref VPC
       CidrBlock: 10.0.0.0/24
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
+        - Key: Name
+          Value: Green-CF-VPC
+  Subnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.0.0/28
+      Tags:
+        - Key: Application
+          Value: !Ref 'AWS::StackId'
+        - Key: Name
+          Value: Green-CF-Subnet
   InternetGateway:
     Type: 'AWS::EC2::InternetGateway'
     Properties:
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
+        - Key: Name
+          Value: Green-CF-Gateway
   AttachGateway:
     Type: 'AWS::EC2::VPCGatewayAttachment'
     Properties:
@@ -59,6 +63,8 @@ Resources:
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
+        - Key: Name
+          Value: Green-CF-RouteTable
   Route:
     Type: 'AWS::EC2::Route'
     DependsOn: AttachGateway
@@ -66,6 +72,9 @@ Resources:
       RouteTableId: !Ref RouteTable
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId: !Ref InternetGateway
+      Tags:
+        - Key: Name
+          Value: Green-CF-Route
   SubnetRouteTableAssociation:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
     Properties:
@@ -77,6 +86,9 @@ Resources:
     Properties:
       Domain: vpc
       InstanceId: !Ref PublicUbuntuInstance
+      Tags:
+        - Key: Name
+          Value: Green-CF-IP
   Lab1SecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
@@ -96,9 +108,13 @@ Resources:
           ToPort: '-1'
           CidrIp: 10.0.0.0/24
         - IpProtocol: tcp
-          FromPort: '1'
-          ToPort: '65535'
-          CidrIp: 0.0.0.0/0
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 10.0.0.0/24  # LOCAL CIDR
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 74.140.163.220/32  # PERSONAL CIDR
   PublicUbuntuInstance:
     Type: 'AWS::EC2::Instance'
     DependsOn: AttachGateway
@@ -116,7 +132,7 @@ Resources:
         - Key: Application
           Value: !Ref 'AWS::StackId'
         - Key: Name
-          Value: CEG2350 Ubuntu
+          Value: Green-CF-instance
       NetworkInterfaces:
         - GroupSet:
             - !Ref Lab1SecurityGroup
@@ -124,15 +140,18 @@ Resources:
           DeviceIndex: '0'
           DeleteOnTermination: 'true'
           SubnetId: !Ref Subnet
-          PrivateIpAddress: 10.0.0.25
+          PrivateIpAddress: 10.0.0.25/16
       UserData:
         Fn::Base64:
           !Sub |
             #!/bin/bash -xe
             apt-get update && \
-            apt-get install -y \
+            sudo apt-get install -y \
               git \
+              python3 \
+              pip3 \
               htop \
               sl && \
+              sudo hostnamectl set-hostname greenUbuntu && \
             echo "This is from the CF template" > /home/ubuntu/hello.txt && \
             reboot
