@@ -5,7 +5,7 @@
     - Within the file write '# .env', followed by newline, followed by 'DISCORD_TOKEN=', followed by the contents of the Token that has been copied to the clipboard. 
     - In order for the bot to work, the following must be installed:
       - Python3    (sudo apt install Python3)
-      - pip3       (sudo apt install pip3)
+      - pip3       (sudo apt install python-pip3)
       - discord.py (pip3 install discord.py)
       - dotenv     (pip3 install -U python-dotenv)
   - Usage
