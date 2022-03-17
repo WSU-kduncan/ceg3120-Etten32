@@ -225,7 +225,7 @@ Resources:
             #!/bin/bash -xe
             apt-get update && \
             # TODO need to install apache or nginx
-            sudo apt-get install -y haproxy && \
+            sudo apt-get install -y apache2 && \
             apt-get install -y git && \
             # TODO give it a hostname - hostnamectl  && \
             sudo hostnamectl set-hostname webServ1 && \
@@ -263,7 +263,7 @@ Resources:
             #!/bin/bash -xe
             apt-get update && \
             # TODO need to install apache or nginx
-            sudo apt-get install -y haproxy && \
+            sudo apt-get install -y apache2 && \
             apt-get install -y git && \
             # TODO give it a hostname - hostnamectl  && \
             sudo hostnamectl set-hostname webServ2 && \
