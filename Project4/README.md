@@ -1,6 +1,6 @@
-##J+M+J
+## J+M+J
 
-###1. See below for each file format: 
+### 1. See below for each file format: 
 
 	/etc/hosts file: is configured in the following manner:
 
@@ -16,7 +16,7 @@
 
 		IdentityFile __path_to_private_key__	 
 
-##2. To ssh between the different systems, use the following command and format:
+## 2. To ssh between the different systems, use the following command and format:
 
 ssh -i __path_to_private_key__ __user_name__@__ip_to_connect__
 
@@ -26,11 +26,11 @@ webserv1: ssh -i .ssh/keys/servers-aws.pem ubuntu@10.0.1.10
 
 webserv2: ssh -i .ssh/keys/servers-aws.pem ubuntu@10.0.1.13
 
-##3. HAProxy configuration details:
+## 3. HAProxy configuration details:
 	
-###a. haproxy.cfg was edited at: /etc/haproxy
+### a. haproxy.cfg was edited at: /etc/haproxy
 	
-###b. The back and front end were set up as the following:
+### b. The back and front end were set up as the following:
 
 		frontend 35.168.154.5			//global ip link
 
@@ -48,9 +48,9 @@ webserv2: ssh -i .ssh/keys/servers-aws.pem ubuntu@10.0.1.13
 
         		server webserv2 10.0.1.13:80	//link to webserv2
 	
-###c. If a configuration change was needed, run: sudo systemctl restart haproxy
+### c. If a configuration change was needed, run: sudo systemctl restart haproxy
 	
-###d. Resources used:
+### d. Resources used:
 
 		https://www.whatismyip.com/
 
@@ -62,18 +62,18 @@ webserv2: ssh -i .ssh/keys/servers-aws.pem ubuntu@10.0.1.13
 
 		Help from instructor (Discord)
 
-##4. Webserver configuration details:
+## 4. Webserver configuration details:
 
-###a. index.html at: /var/www/html 
+### a. index.html at: /var/www/html 
 
-###b. No configurations were changed.
+### b. No configurations were changed.
 
-###c. index.html was located and changed on each webserver so that the
+### c. index.html was located and changed on each webserver so that the
 		tester could see what server he was being hosted content from.
 
-###d. If a file change was made, run: sudo systemctl restart apache2
+### d. If a file change was made, run: sudo systemctl restart apache2
 
-###e. Resources used:
+### e. Resources used:
 
 		Unknown resource.... 			
 
@@ -81,10 +81,10 @@ webserv2: ssh -i .ssh/keys/servers-aws.pem ubuntu@10.0.1.13
 
 		https://phoenixnap.com/kb/how-to-vim-save-quit-exit
 
-##5. Screenshot 1:
+## 5. Screenshot 1:
    ![webserver 1](webserv1.PNG)
 
 Screenshot 2:
    ![webserver 2 screenshot](webserv2.PNG)
 
-##6. Link to Proxy: http://35.168.154.5/
+## 6. Link to Proxy: http://35.168.154.5/
