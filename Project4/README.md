@@ -46,6 +46,7 @@ webserv2: ssh -i .ssh/keys/servers-aws.pem ubuntu@10.0.1.13
 
 5. Screenshot 1:
    ![webserver 1](webserv1.PNG)
-   ![webserver 2 screenshot](webserv2.PNG)
 Screenshot 2:
+   ![webserver 2 screenshot](webserv2.PNG)
 
+6. Link to Proxy: http://35.168.154.5/
