@@ -45,6 +45,7 @@ webserv2: ssh -i .ssh/keys/servers-aws.pem ubuntu@10.0.1.13
 		https://phoenixnap.com/kb/how-to-vim-save-quit-exit
 
 5. Screenshot 1:
-
+   ![webserver 1](webserv1.PNG)
+   ![webserver 2 screenshot](webserv2.PNG)
 Screenshot 2:
 
