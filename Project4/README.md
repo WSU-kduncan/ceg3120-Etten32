@@ -52,9 +52,7 @@ webserv2: ssh -i .ssh/keys/servers-aws.pem ubuntu@10.0.1.13
 	
 ### d. Resources used:
 
-		https://www.whatismyip.com/
-
-		//(Yeah I know, shameful....)
+		https://www.whatismyip.com/		//(Yeah I know, shameful....)
 
 		https://askubuntu.com/questions/729072/where-is-that-apache2-stored-after-installation
 
@@ -68,16 +66,13 @@ webserv2: ssh -i .ssh/keys/servers-aws.pem ubuntu@10.0.1.13
 
 ### b. No configurations were changed.
 
-### c. index.html was located and changed on each webserver so that the
-		tester could see what server he was being hosted content from.
+### c. index.html was located and changed on each webserver so that the tester could see what server he was being hosted content from.
 
 ### d. If a file change was made, run: sudo systemctl restart apache2
 
 ### e. Resources used:
 
-		Unknown resource.... 			
-
-		//(I can't find it in my history... but I looked up where to find /var/www/html/index.html somewhere online) 
+		Unknown resource.... 			//(I can't find it in my history... but I looked up where to find /var/www/html/index.html somewhere online) 
 
 		https://phoenixnap.com/kb/how-to-vim-save-quit-exit
 
